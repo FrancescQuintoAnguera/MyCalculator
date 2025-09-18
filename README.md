@@ -19,8 +19,8 @@ php -S localhost:8000
 ## Dependencies
 
 | Tecnologies | Version |
--------------------------
-|     `php`     |  8.3.X  |
+|-------------|---------|
+|     `php`   |  8.3.X  |
 
 
 ### How to install the dependencies?
