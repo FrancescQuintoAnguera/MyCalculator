@@ -7,13 +7,23 @@ $number1 = null;
 $number2 = null;
 $operator = null;
 $result = null;
-$arrayOperators = array('+', '-', '*', '/');
+$arrayOperators = array('+', '-', '*', '/', '!n');
 
 // Init history
 
 if(!isset($_SESSION['history'])) {
     $_SESSION['history'] = [];
     $_SESSION['lastResult'] = [];
+}
+
+// factorial function
+
+function factorial($num1){
+    $result = 1;
+    for ($i = 1; $i <=$num1; $i++){
+        $result = $result * $i;
+    };
+    return $result;
 }
 
 // function
@@ -31,6 +41,9 @@ function operation($num1, $num2, $ope ){
             break;
         case '/':
             $result = $num1 / $num2;
+            break;
+        case '!n':
+            $result = factorial($num1);
             break;
     }
     $_SESSION['history'][] = "$num1 $ope $num2 = $result";
